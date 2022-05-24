@@ -23,7 +23,7 @@ function Form({setTasks}:Props){
                     completed: false,
                     id: uuidv4()
 
-                }])
+                }]);
                 setTask("");
                 setTime("00:00")
     }
@@ -34,9 +34,9 @@ function Form({setTasks}:Props){
             <label htmlFor="task">Add a new Study</label>
                 <input type="text"
                 name="task"
+                id="task "
                 value={task}
                 onChange={event => setTask( event.target.value)}
-                id="task "
                 placeholder="What dou you study ?"
                 required />
 
@@ -44,11 +44,12 @@ function Form({setTasks}:Props){
 
         <div className={style.inputContainer}>
             <label htmlFor="time" >Time</label>
-                <input type="time"
+                <input
+                 type="time"
                 step="1"
                 name="time"
-                value={time}
                 onChange={event=> setTime( event.target.value)}
+                value={time}
                  id="time"
                  min="00:00:00"
                  max="1:30:00"

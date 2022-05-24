@@ -6,7 +6,8 @@ interface Props extends Itask{
     selectTask: (selectedTask: Itask)=> void
 }
 
-export default function Item ({task,
+export default function Item ({
+    task,
     time,
     selected,
     completed,
@@ -16,8 +17,8 @@ export default function Item ({task,
         
     return(
 
-        <li className={`${style.item} ${selected ? style
-            .selectedItem : ''} ${completed ? style.completedItem : ''}`} 
+        <li className={`${style.item} ${selected? style.selectedItem : ''}
+         ${completed ? style.completedItem : ''}`} 
         onClick={()=> !completed && selectTask({
             task,
             time,
@@ -27,6 +28,7 @@ export default function Item ({task,
 
         })}>
         <h3>
+            {task}
         </h3>
             <span>
            {time}
